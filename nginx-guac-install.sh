@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Add certbot repository
 # add-apt-repository ppa:certbot/certbot -y
 sudo add-apt-repository ppa:certbot/certbot
@@ -9,7 +8,6 @@ sudo apt-get update
 sudo apt-get upgrade -y
 # Install nginx
 sudo apt-get install nginx -y
-
 # Get domain name and email address for Let's encrypt certificate
 while true
 do
@@ -32,9 +30,7 @@ do
     echo "Email addresses don't match. Please try again."
     echo
 done
-
 guacamoleurl=http://localhost:8080/guacamole/
-
 # Configure /etc/nginx/sites-available/(website name)
 cat >/etc/nginx/sites-available/$website <<EOL
 server {
@@ -56,15 +52,12 @@ server {
 
 }
 EOL
-
 # symlink from sites-available to sites-enabled
 ln -s /etc/nginx/sites-available/$website /etc/nginx/sites-enabled/
 # make sure default is unlinked
 unlink /etc/nginx/sites-enabled/default
-
 service apache2 stop
 systemctl start nginx
-
 #add-apt-repository ppa:certbot/certbot -y
 #apt-get update
 sudo apt install python-certbot-nginx -y
