@@ -4,11 +4,11 @@
 # add-apt-repository ppa:certbot/certbot -y
 sudo add-apt-repository ppa:certbot/certbot
 # Update package lists
-apt-get update
+sudo apt-get update
 # Upgrade existing packages
-apt-get upgrade -y
+sudo apt-get upgrade -y
 # Install nginx
-apt-get install nginx -y
+sudo apt-get install nginx -y
 
 # Get domain name and email address for Let's encrypt certificate
 while true
@@ -67,5 +67,5 @@ systemctl start nginx
 
 #add-apt-repository ppa:certbot/certbot -y
 #apt-get update
-apt install python-certbot-nginx -y
+sudo apt install python-certbot-nginx -y
 certbot --nginx -n -d $website -d www.$website --email $certbotemail --agree-tos --redirect --hsts
