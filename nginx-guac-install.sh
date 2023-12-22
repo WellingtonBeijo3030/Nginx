@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Add certbot repository
-add-apt-repository ppa:certbot/certbot -y
+# add-apt-repository ppa:certbot/certbot -y
+sudo add-apt-repository ppa:certbot/certbot
 # Update package lists
 apt-get update
 # Upgrade existing packages
