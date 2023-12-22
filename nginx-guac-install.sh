@@ -11,9 +11,9 @@ sudo apt-get install nginx -y
 # Get domain name and email address for Let's encrypt certificate
 while true
 do
-    read -p "Enter the fqdn for your domain: " website
+    read -p "Enter the fqdn for your domain: " http://igacesso.com
     echo
-    read -p "Confirm the fqdn for your domain: " website2
+    read -p "Confirm the fqdn for your domain: "http://igacesso.com
     echo
     [ "$website" = "$website2" ] && break
     echo "Domains don't match. Please try again."
